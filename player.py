@@ -9,10 +9,12 @@ class Player:
     def __init__(self, game):
         self.game = game
         self.screen = game.screen
+
         self.absolute_x, self.absolute_y = 0, 0
         self.cell_x = 0
         self.cell_y = 0
         self.img = self._load_image(0, 0)
+
         self.wearing = 0
         self.moving_animation = []
         for i in [0, 2, 3, 4, 5, 6, 7, 0, 0]:
@@ -20,6 +22,8 @@ class Player:
         self.facing = RIGHT
         self.moving = None
         self.moving_state = 0
+
+        self.inventory = []
 
     @staticmethod
     def _load_image(texture_x, texture_y):
@@ -32,6 +36,12 @@ class Player:
         return cell_x * CELL_SIZE + self.game.level.start_x + 2, \
                cell_y * CELL_SIZE + self.game.level.start_y
 
+    def add_to_inventory(self, item):
+        if len(self.inventory) < MAX_ITEMS:
+            self.inventory.append(item)
+            return True
+        return False
+
     def teleport_to_cell(self, x, y, start_x=None, start_y=None):
         self.cell_x = x
         self.cell_y = y
@@ -42,6 +52,16 @@ class Player:
             self.absolute_x, self.absolute_y = \
                 x * CELL_SIZE + start_x, \
                 y * CELL_SIZE + start_y - 1
+
+    def _update_cell(self):
+        cell = self.game.level.board[self.cell_x][self.cell_y]
+        if not cell.items:
+            return
+        for item in cell.items:
+            if self.add_to_inventory(self.game.im.items_store[item['item']]):
+                del cell.items[cell.items.index(item)]
+            else:
+                break  # TODO items events
 
     def update(self):
         if self.moving is None:
@@ -70,6 +90,7 @@ class Player:
                 self.cell_x -= 1
             self.moving = None
             self.moving_state = 0
+            self._update_cell()
 
     def render(self):
         self.screen.blit(self.img,

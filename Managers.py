@@ -23,7 +23,6 @@ class BlockManager:
             return obj.go_out_event(game)
 
 
-
 class ItemManager:
 
     def __init__(self):

@@ -38,7 +38,11 @@
         "block": "brick_wall"
       },
       {
-        "block": "stone_floor"
+        "block": "stone_floor",
+        "items": [{
+          "item": "sword",
+          "data": {}
+        }]
       },
       {
         "block": "stone_floor"
