@@ -1,0 +1,6 @@
+WIDTH = 800
+HEIGHT = 600
+FPS = 30
+LEVELS_DIR = 'levels/'
+ASSETS_DIR = 'assets/'
+CELL_SIZE = 16

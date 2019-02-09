@@ -1,0 +1,79 @@
+{
+  "next_level": 3,
+  "start_pos": {
+    "x": 1,
+    "y": 1
+  },
+  "width": 4,
+  "height": 4,
+  "board": [
+    [
+      {
+        "block": "brick_wall",
+        "items": [{
+          "item": "skeleton",
+          "data": {}
+        }],
+        "mobs": [{
+          "mob": "mouse",
+          "data": {}
+        }]
+      },
+      {
+        "block": "brick_wall",
+        "items": [{
+          "item": "sword",
+          "data": {}
+        }]
+      },
+      {
+        "block": "brick_wall"
+      },
+      {
+        "block": "brick_wall"
+      }
+    ],
+    [
+      {
+        "block": "brick_wall"
+      },
+      {
+        "block": "stone_floor"
+      },
+      {
+        "block": "stone_floor"
+      },
+      {
+        "block": "brick_wall"
+      }
+    ],
+    [
+      {
+        "block": "brick_wall"
+      },
+      {
+        "block": "stone_floor"
+      },
+      {
+        "block": "stone_floor"
+      },
+      {
+        "block": "brick_wall"
+      }
+    ],
+    [
+      {
+        "block": "brick_wall"
+      },
+      {
+        "block": "brick_wall"
+      },
+      {
+        "block": "brick_wall"
+      },
+      {
+        "block": "brick_wall"
+      }
+    ]
+  ]
+}
