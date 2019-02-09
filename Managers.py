@@ -1,5 +1,6 @@
 import assets.blocks.descrition as blocks
 import assets.items.description as items
+from Constants import *
 
 
 class BlockManager:
@@ -11,6 +12,16 @@ class BlockManager:
 
     def get_texture(self, name):
         return self.blocks_store[name].img
+
+    def summon_event(self, name, event, game):
+        obj = self.blocks_store[name]
+        if event == CAN_GO_EVENT:
+            return obj.can_go()
+        elif event == GO_INTO_EVENT:
+            return obj.go_into_event(game)
+        elif event == GO_OUT_EVENT:
+            return obj.go_out_event(game)
+
 
 
 class ItemManager:

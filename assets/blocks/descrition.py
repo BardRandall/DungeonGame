@@ -7,6 +7,9 @@ class brick_wall(BasicBlock):
         super().__init__()
         self.load_image(0, 1, 0)
 
+    def can_go(self):
+        return False
+
 
 class stone_floor(BasicBlock):
 

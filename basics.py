@@ -14,6 +14,15 @@ class BasicBlock:
         image = image.crop((x, y, x + 16, y + 16))
         self.img = pim.fromstring(image.tobytes('raw', 'RGBA'), (16, 16), 'RGBA')
 
+    def can_go(self):
+        return True
+
+    def go_into_event(self, game):
+        pass
+
+    def go_out_event(self, game):
+        pass
+
 
 class BasicItem:
 

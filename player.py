@@ -79,6 +79,26 @@ class Player:
     def step(self, direction):
         if self.moving is not None:
             return
+        if direction == UP and \
+                not self.game.bm.summon_event(
+                    self.game.level.board[self.cell_x][self.cell_y - 1].block,
+                    CAN_GO_EVENT, self.game):
+            return
+        elif direction == RIGHT and \
+                not self.game.bm.summon_event(
+                    self.game.level.board[self.cell_x + 1][self.cell_y].block,
+                    CAN_GO_EVENT, self.game):
+            return
+        elif direction == DOWN and \
+                not self.game.bm.summon_event(
+                    self.game.level.board[self.cell_x][self.cell_y + 1].block,
+                    CAN_GO_EVENT, self.game):
+            return
+        elif direction == LEFT and \
+                not self.game.bm.summon_event(
+                    self.game.level.board[self.cell_x - 1][self.cell_y].block,
+                    CAN_GO_EVENT, self.game):
+            return
         self.moving = direction
         if direction == LEFT:
             self.facing = LEFT
