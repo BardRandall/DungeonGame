@@ -4,3 +4,7 @@ FPS = 30
 LEVELS_DIR = 'levels/'
 ASSETS_DIR = 'assets/'
 CELL_SIZE = 16
+UP = 0
+RIGHT = 1
+DOWN = 2
+LEFT = 3
