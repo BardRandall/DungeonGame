@@ -18,10 +18,10 @@ class BasicBlock:
         return True
 
     def go_into_event(self, game):
-        pass
+        return True
 
     def go_out_event(self, game):
-        pass
+        return True
 
 
 class BasicItem:
@@ -34,6 +34,12 @@ class BasicItem:
         x, y = texture_x * 16, texture_y * 16
         image = image.crop((x, y, x + 16, y + 16))
         self.img = pim.fromstring(image.tobytes('raw', 'RGBA'), (16, 16), 'RGBA')
+
+    def take_item_event(self, game):
+        return True
+
+    def throw_item_event(self, game):
+        return True
 
 
 class BasicMob:

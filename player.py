@@ -48,6 +48,7 @@ class Player:
         if start_x is None or start_y is None:
             self.absolute_x, self.absolute_y = \
                 self._count_absolute_by_cell(x, y)
+            self._update_cell()
         else:
             self.absolute_x, self.absolute_y = \
                 x * CELL_SIZE + start_x, \
@@ -58,10 +59,12 @@ class Player:
         if not cell.items:
             return
         for item in cell.items:
+            if not self.game.im.summon_event(item['item'], TAKE_ITEM_EVENT, self.game):
+                continue
             if self.add_to_inventory(self.game.im.items_store[item['item']]):
                 del cell.items[cell.items.index(item)]
             else:
-                break  # TODO items events
+                break
 
     def update(self):
         if self.moving is None:
@@ -80,6 +83,8 @@ class Player:
         if self.moving_state < len(self.moving_animation) - 1:
             self.moving_state += 1
         else:
+            self.game.bm.summon_event(self.game.level.board[self.cell_x][self.cell_y].block,
+                                      GO_OUT_EVENT, self.game)
             if self.moving == UP:
                 self.cell_y -= 1
             elif self.moving == RIGHT:
@@ -90,7 +95,9 @@ class Player:
                 self.cell_x -= 1
             self.moving = None
             self.moving_state = 0
-            self._update_cell()
+            self.game.bm.summon_event(self.game.level.board[self.cell_x][self.cell_y].block,
+                                      GO_INTO_EVENT, self.game)
+            self.teleport_to_cell(self.cell_x, self.cell_y)
 
     def render(self):
         self.screen.blit(self.img,
@@ -100,6 +107,10 @@ class Player:
     def step(self, direction):
         if self.moving is not None:
             return
+        if direction == LEFT:
+            self.facing = LEFT
+        elif direction == RIGHT:
+            self.facing = RIGHT
         if direction == UP and \
                 not self.game.bm.summon_event(
                     self.game.level.board[self.cell_x][self.cell_y - 1].block,
@@ -121,7 +132,3 @@ class Player:
                     CAN_GO_EVENT, self.game):
             return
         self.moving = direction
-        if direction == LEFT:
-            self.facing = LEFT
-        elif direction == RIGHT:
-            self.facing = RIGHT
