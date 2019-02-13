@@ -18,9 +18,15 @@ class sword(BasicItem):
         super().__init__()
         self.load_image(2, 0)
 
+    def get_description(self):
+        return 'Меч: наносит от 2 до 4 единиц урона'
+
 
 class packed_lunch(BasicItem):
 
     def __init__(self):
         super().__init__()
         self.load_image(4, 0)
+
+    def get_description(self):
+        return 'Сухой паек: дешево и сердито'

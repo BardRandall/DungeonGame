@@ -3,6 +3,8 @@ from PIL import Image
 import pygame.image as pim
 import pygame
 
+from GUI import Inventory
+
 
 class Player:
 
@@ -22,9 +24,9 @@ class Player:
         self.facing = RIGHT
         self.moving = None
         self.moving_state = 0
-        self.inv_choose = None
+        self.show_inventory = False
 
-        self.inventory = []
+        self.inventory = Inventory(self.game)
 
     @staticmethod
     def _load_image(texture_x, texture_y):
@@ -38,7 +40,7 @@ class Player:
                cell_y * CELL_SIZE + self.game.level.start_y
 
     def add_to_inventory(self, item):
-        if len(self.inventory) < MAX_ITEMS:
+        if len(self.inventory.store) < MAX_ITEMS:
             if type(item) != str:
                 self.inventory.append(item)
             else:
@@ -107,6 +109,8 @@ class Player:
         self.screen.blit(self.img,
                          (self.absolute_x,
                           self.absolute_y))
+        if self.show_inventory:
+            self.inventory.render()
 
     def step(self, direction):
         if self.moving is not None:
@@ -136,44 +140,3 @@ class Player:
                     CAN_GO_EVENT, self.game):
             return
         self.moving = direction
-
-    def render_inventory(self):
-        pygame.draw.rect(
-                             self.screen,
-                             INVENTORY_BORDER_COLOR,
-                             (INVENTORY_X,
-                              INVENTORY_Y,
-                              INVENTORY_WIDTH,
-                              INVENTORY_HEIGHT)
-        )
-        font = pygame.font.Font(None, 25)
-        text = font.render(INVENTORY_TITLE, True, INVENTORY_FONT_COLOR)
-        text_width = 2 * INVENTORY_LOW_SPACE + INVENTORY_CELL * INVENTORY_COLS + (INVENTORY_COLS - 1) * INVENTORY_SPACES
-        text_rect = text.get_rect()
-        self.screen.blit(text, (
-                                (text_width - text_rect.width) // 2 + INVENTORY_X,
-                                (INVENTORY_MAX_SPACE - text_rect.height) // 2 + INVENTORY_Y
-                                )
-                         )
-        item_index = 0
-        for j in range(INVENTORY_ROWS):
-            for i in range(INVENTORY_COLS):
-                x = INVENTORY_X + INVENTORY_LOW_SPACE + (INVENTORY_CELL + INVENTORY_SPACES) * i
-                y = INVENTORY_Y + INVENTORY_MAX_SPACE + (INVENTORY_CELL + INVENTORY_SPACES) * j
-                pygame.draw.rect(
-                    self.screen,
-                    INVENTORY_COLOR,
-                    (
-                        x,
-                        y,
-                        INVENTORY_CELL,
-                        INVENTORY_CELL
-                    )
-                )
-                if item_index < len(self.inventory):
-                    self.screen.blit(self.inventory[item_index].img, (x + 8, y + 8))
-                    item_index += 1
-
-    def click_inventory(self, i, j):
-        self.inv_choose = (i, j)
-

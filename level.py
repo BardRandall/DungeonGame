@@ -46,6 +46,9 @@ class Level:
     def update(self):
         pass
 
+    def spawn_item(self, item, x, y):
+        self.board[x][y].add_item({'item': item, 'data': {}})
+
     def render(self):
         for i in range(len(self.board)):
             for j in range(len(self.board[i])):

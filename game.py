@@ -15,7 +15,6 @@ class Game:
         self.mobs = []
         self.eh = EventHandler(self)
         self.level = Level('level1.json', self.screen, self)
-        self.show_inventory = False
         self.gui = None
 
     def update(self):
@@ -37,8 +36,6 @@ class Game:
     def render(self):
         self.level.render()
         self.player.render()
-        if self.show_inventory:
-            self.player.render_inventory()
         if self.gui is not None:
             self.gui.render()
         #for mob in self.mobs:

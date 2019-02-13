@@ -41,6 +41,16 @@ class BasicItem:
     def throw_item_event(self, game):
         return True
 
+    def handle_variants(self, variant, game):
+        if variant == 0:
+            game.player.inventory.throw_item()
+
+    def get_choices(self):
+        return ['Выбросить'], self.handle_variants
+
+    def get_description(self):
+        return 'Автор не придумал описания'
+
 
 class BasicMob:
 

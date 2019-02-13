@@ -21,14 +21,24 @@ class EventHandler:
         self._handle_pressed()
 
     def _handle_mouse(self, event):
-        if not self.game.show_inventory:
-            return
-        for j in range(INVENTORY_ROWS):
-            for i in range(INVENTORY_COLS):
-                x = INVENTORY_X + INVENTORY_LOW_SPACE + (INVENTORY_CELL + INVENTORY_SPACES) * i
-                y = INVENTORY_Y + INVENTORY_MAX_SPACE + (INVENTORY_CELL + INVENTORY_SPACES) * j
-                if x <= event.pos[0] <= x + INVENTORY_CELL and y <= event.pos[1] <= y + INVENTORY_CELL:
-                    self.game.player.click_inventory(i, j)
+        if self.game.player.show_inventory:
+            running = True
+            for j in range(INVENTORY_ROWS):
+                for i in range(INVENTORY_COLS):
+                    x = INVENTORY_X + INVENTORY_LOW_SPACE + (INVENTORY_CELL + INVENTORY_SPACES) * i
+                    y = INVENTORY_Y + INVENTORY_MAX_SPACE + (INVENTORY_CELL + INVENTORY_SPACES) * j
+                    if x <= event.pos[0] <= x + INVENTORY_CELL and y <= event.pos[1] <= y + INVENTORY_CELL:
+                        self.game.player.inventory.click(j, i)
+                        running = False
+                        break
+                if not running:
+                    break
+        if self.game.gui is not None:
+            for i in range(len(self.game.gui.buttons)):
+                btn = self.game.gui.buttons[i]
+                if btn[0] <= event.pos[0] <= btn[0] + btn[2] and btn[1] <= event.pos[1] <= btn[1] + btn[3]:
+                    self.game.gui.click(i)
+                    break
 
     def _handle_pressed(self):
         if self.pressed == UP_KEY:
@@ -42,9 +52,12 @@ class EventHandler:
 
     def _handle_keydown(self, event):
         if event.key == INVENTORY_KEY:
-            self.game.show_inventory = not self.game.show_inventory
+            self.game.player.show_inventory = not self.game.player.show_inventory
+            if not self.game.player.show_inventory:
+                self.game.player.inventory.choosed = None
+                self.game.gui = None
             return
-        if not self.game.show_inventory:
+        if not self.game.player.show_inventory:
             self.pressed = event.key
 
     def _handle_keyup(self, event):
