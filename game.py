@@ -25,8 +25,9 @@ class Game:
             mob.update()
         self.eh.handle(None)
 
-    def step(self, direction):
-        self.player.step(direction)
+    def step(self, direction=None):
+        if direction is not None:
+            self.player.step(direction)
 
     def open_gui(self, gui, callback=None):
         if callback is not None:

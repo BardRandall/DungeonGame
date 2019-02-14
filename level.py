@@ -23,6 +23,8 @@ class Level:
     def __init__(self, filename, screen, game):
         self.bm = game.bm
         self.im = game.im
+        self.is_open_door = False
+        self.game = game
         with open(LEVELS_DIR + filename) as f:
             self.data = json.load(f)
         self.screen = screen
@@ -50,10 +52,15 @@ class Level:
         self.board[x][y].add_item({'item': item, 'data': {}})
 
     def render(self):
+        player = self.game.player
         for i in range(len(self.board)):
             for j in range(len(self.board[i])):
                 cell = self.board[i][j]
-                self.screen.blit(self.bm.get_texture(cell.block),
+                if self.is_open_door and i == player.cell_x and j == player.cell_y:
+                    texture = self.bm.get_texture('open_door')
+                else:
+                    texture = self.bm.get_texture(cell.block)
+                self.screen.blit(texture,
                                  (self.start_x + i * CELL_SIZE,
                                   self.start_y + j * CELL_SIZE))
                 if cell.items:

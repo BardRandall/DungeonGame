@@ -20,7 +20,7 @@ class Player:
         self.cell_y = 0
         self.img = self._load_image(0, 0)
 
-        self.wearing = 0
+        self.wearing = 1
         self.moving_animation = []
         for i in [0, 2, 3, 4, 5, 6, 7, 0, 0]:
             self.moving_animation.append(self._load_image(i, self.wearing))

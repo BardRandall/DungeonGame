@@ -90,6 +90,7 @@ class GUI:
 
     def click(self, i):
         self.callback(i, self.game)
+        self.game.step()
         if self.game.player.show_inventory:
             self.game.player.inventory.choosed = None
             self.game.gui = None
@@ -173,12 +174,12 @@ class Inventory:
     def remove_item(self):
         if self.choosed is None:
             return
-        player = self.game.player
         return self.store.pop(self.choosed[0] * INVENTORY_COLS + self.choosed[1])
 
     def throw_item(self):
         if self.choosed is None:
             return
+        player = self.game.player
         if self.game.im.summon_event(self.store[self.choosed[0] * INVENTORY_COLS + self.choosed[1]].__class__.__name__,
                                      THROW_ITEM_EVENT, self.game):
             item = self.remove_item()
