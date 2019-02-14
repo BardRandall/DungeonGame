@@ -170,11 +170,16 @@ class Inventory:
             self.choosed = None
             self.game.gui = None
 
-    def throw_item(self):
+    def remove_item(self):
         if self.choosed is None:
             return
         player = self.game.player
+        return self.store.pop(self.choosed[0] * INVENTORY_COLS + self.choosed[1])
+
+    def throw_item(self):
+        if self.choosed is None:
+            return
         if self.game.im.summon_event(self.store[self.choosed[0] * INVENTORY_COLS + self.choosed[1]].__class__.__name__,
                                      THROW_ITEM_EVENT, self.game):
-            item = self.store.pop(self.choosed[0] * INVENTORY_COLS + self.choosed[1])
+            item = self.remove_item()
             self.game.level.spawn_item(item.__class__.__name__, player.cell_x, player.cell_y)

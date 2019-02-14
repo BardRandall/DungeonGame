@@ -1,4 +1,4 @@
-from basics import BasicItem
+from basics import BasicItem, FoodItem
 
 
 class skeleton(BasicItem):
@@ -22,7 +22,7 @@ class sword(BasicItem):
         return 'Меч: наносит от 2 до 4 единиц урона'
 
 
-class packed_lunch(BasicItem):
+class packed_lunch(FoodItem):
 
     def __init__(self):
         super().__init__()

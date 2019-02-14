@@ -12,6 +12,7 @@ class Game:
         self.player = Player(self)
         self.bm = BlockManager()
         self.im = ItemManager()
+        self.em = EffectManager()
         self.mobs = []
         self.eh = EventHandler(self)
         self.level = Level('level1.json', self.screen, self)

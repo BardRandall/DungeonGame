@@ -14,6 +14,9 @@ class BasicBlock:
         image = image.crop((x, y, x + 16, y + 16))
         self.img = pim.fromstring(image.tobytes('raw', 'RGBA'), (16, 16), 'RGBA')
 
+    def get_img(self):
+        return self.img
+
     def can_go(self):
         return True
 
@@ -56,3 +59,31 @@ class BasicMob:
 
     def __init__(self):
         pass
+
+
+class BasicEffect:
+
+    def __init__(self):
+        self.name = 'Неизвестный эффект'
+
+    def affect(self, game):
+        pass
+
+
+class FoodItem(BasicItem):
+
+    def __init__(self):
+        super().__init__()
+
+    def handle_variants(self, variant, game):
+        if variant == 0:
+            game.player.inventory.throw_item()
+        elif variant == 1:
+            game.player.delete_effect('hungry')
+            game.player.inventory.remove_item()
+
+    def get_choices(self):
+        return ['Выбросить', 'Съесть'], self.handle_variants
+
+    def get_description(self):
+        return 'Это какая-то еда'

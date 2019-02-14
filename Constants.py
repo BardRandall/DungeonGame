@@ -3,7 +3,7 @@ from pygame import K_i, K_UP, K_RIGHT, K_DOWN, K_LEFT
 WIDTH = 800
 HEIGHT = 600
 CELL_SIZE = 16
-FPS = 30
+FPS = 45
 
 #DIRS
 LEVELS_DIR = 'levels/'
@@ -24,7 +24,8 @@ THROW_ITEM_EVENT = 5
 
 #PLAYER
 MAX_ITEMS = 24
-MAX_HEALTH = 20
+MAX_HEALTH = 100
+UNHUNGRY_STEPS = 10  # TODO change
 
 
 #KEYS

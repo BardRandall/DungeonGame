@@ -1,5 +1,6 @@
 import assets.blocks.descrition as blocks
 import assets.items.description as items
+import assets.effects.description as effects
 from basics import *
 
 
@@ -11,7 +12,7 @@ class BlockManager:
             self.blocks_store[block] = eval('blocks.{}()'.format(block))
 
     def get_texture(self, name):
-        return self.blocks_store[name].img
+        return self.blocks_store[name].get_img()
 
     def summon_event(self, name, event, game):
         obj = self.blocks_store[name]
@@ -27,7 +28,7 @@ class ItemManager:
 
     def __init__(self):
         self.items_store = {}
-        for item in dir(items)[9:]:
+        for item in dir(items)[10:]:
             self.items_store[item] = eval('items.{}()'.format(item))
 
     def get_texture(self, name):
@@ -39,3 +40,14 @@ class ItemManager:
             return obj.take_item_event(game)
         elif event == THROW_ITEM_EVENT:
             return obj.throw_item_event(game)
+
+
+class EffectManager:
+
+    def __init__(self):
+        self.effects_store = {}
+        for effect in dir(effects)[10:]:
+            self.effects_store[effect] = eval('effects.{}()'.format(effect))
+
+    def find(self, name):
+        return self.effects_store[name]

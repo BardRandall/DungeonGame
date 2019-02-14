@@ -11,6 +11,9 @@ class Player:
     def __init__(self, game):
         self.game = game
         self.screen = game.screen
+        self.health = MAX_HEALTH
+        self.effects = []
+        self.unhungry_steps = UNHUNGRY_STEPS
 
         self.absolute_x, self.absolute_y = 0, 0
         self.cell_x = 0
@@ -47,6 +50,14 @@ class Player:
                 self.inventory.append(self.game.im.items_store[item])
             return True
         return False
+
+    def set_effect(self, effect):
+        obj = self.game.em.find(effect)
+        if obj not in self.effects:
+            self.effects.append(obj)
+
+    def delete_effect(self, effect):
+        del self.effects[self.effects.index(self.game.em.find(effect))]
 
     def teleport_to_cell(self, x, y, start_x=None, start_y=None):
         self.cell_x = x
@@ -140,3 +151,12 @@ class Player:
                     CAN_GO_EVENT, self.game):
             return
         self.moving = direction
+        self.unhungry_steps -= 1
+        if self.unhungry_steps == 0:
+            self.set_effect('hungry')
+        for effect in self.effects:
+            effect.affect(self.game)
+        print(self.health)
+        if self.health <= 0:
+            print('DIED')
+            # TODO ending

@@ -26,3 +26,19 @@ class upstairs(BasicBlock):
 
     def go_into_event(self, game):
         game.player.teleport_to_cell(0, 0)
+
+
+class door(BasicBlock):
+
+    def __init__(self):
+        super().__init__()
+        self.load_image(5, 0, 0)
+
+    def go_into_event(self, game):
+        pass
+
+    def go_out_event(self, game):
+        pass
+
+    def get_img(self):
+        return self.img
