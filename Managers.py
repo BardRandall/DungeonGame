@@ -28,7 +28,7 @@ class ItemManager:
 
     def __init__(self):
         self.items_store = {}
-        for item in dir(items)[10:]:
+        for item in dir(items)[11:]:
             self.items_store[item] = eval('items.{}()'.format(item))
 
     def get_texture(self, name):
@@ -46,7 +46,7 @@ class EffectManager:
 
     def __init__(self):
         self.effects_store = {}
-        for effect in dir(effects)[10:]:
+        for effect in dir(effects)[9:]:
             self.effects_store[effect] = eval('effects.{}()'.format(effect))
 
     def find(self, name):

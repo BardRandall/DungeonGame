@@ -21,6 +21,12 @@ class Player:
         self.img = self._load_image(0, 0)
 
         self.wearing = 1
+
+        self.weapon = None
+        self.armour = None
+        self.ring1 = None
+        self.ring2 = None
+
         self.moving_animation = []
         for i in [0, 2, 3, 4, 5, 6, 7, 0, 0]:
             self.moving_animation.append(self._load_image(i, self.wearing))
@@ -57,7 +63,9 @@ class Player:
             self.effects.append(obj)
 
     def delete_effect(self, effect):
-        del self.effects[self.effects.index(self.game.em.find(effect))]
+        eff = self.game.em.find(effect)
+        if eff in self.effects:
+            del self.effects[self.effects.index(eff)]
 
     def teleport_to_cell(self, x, y, start_x=None, start_y=None):
         self.cell_x = x
@@ -70,6 +78,12 @@ class Player:
             self.absolute_x, self.absolute_y = \
                 x * CELL_SIZE + start_x, \
                 y * CELL_SIZE + start_y - 1
+
+    def hit(self, k):
+        if self.armour is None:
+            self.health -= k
+            return
+        self.health -= (1 - self.armour.get_defence()) * k
 
     def _update_cell(self):
         cell = self.game.level.board[self.cell_x][self.cell_y]
@@ -122,6 +136,19 @@ class Player:
                           self.absolute_y))
         if self.show_inventory:
             self.inventory.render()
+        if self.unhungry_steps > 0:
+            pygame.draw.rect(self.game.screen, (255, 255, 0), (
+                0,
+                0,
+                int((self.unhungry_steps / UNHUNGRY_STEPS) * WIDTH),
+                HUNGRYBAR_HEIGHT
+            ))
+        pygame.draw.rect(self.game.screen, (255, 0, 0), (
+            0,
+            HUNGRYBAR_HEIGHT,
+            int((self.health / MAX_HEALTH) * WIDTH),
+            HUNGRYBAR_HEIGHT
+        ))
 
     def step(self, direction):
         if self.moving is not None:
@@ -156,7 +183,6 @@ class Player:
             self.set_effect('hungry')
         for effect in self.effects:
             effect.affect(self.game)
-        print(self.health)
         if self.health <= 0:
             print('DIED')
             # TODO ending

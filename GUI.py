@@ -131,21 +131,58 @@ class Inventory:
                 x = INVENTORY_X + INVENTORY_LOW_SPACE + (INVENTORY_CELL + INVENTORY_SPACES) * i
                 y = INVENTORY_Y + INVENTORY_MAX_SPACE + (INVENTORY_CELL + INVENTORY_SPACES) * j
                 if self.choosed is not None:
-                    if self.choosed[0] == j and self.choosed[1] == i:
-                        pygame.draw.rect(
-                            self.screen,
-                            INVENTORY_CHOOSE_COLOR,
-                            (
-                                x,
-                                y,
-                                INVENTORY_CELL,
-                                INVENTORY_CELL
+                    if type(self.choosed) == int and j == 0:
+                        if (self.choosed == WEAPON and i == 0) or \
+                           (self.choosed == ARMOUR and i == 1) or \
+                           (self.choosed == RING1 and i == 2) or \
+                           (self.choosed == RING2 and i == 3):
+                            pygame.draw.rect(
+                                self.screen,
+                                INVENTORY_CHOOSE_COLOR,
+                                (
+                                    x,
+                                    y,
+                                    INVENTORY_CELL,
+                                    INVENTORY_CELL
+                                )
                             )
-                        )
-                        if item_index < len(self.store):
-                            self.screen.blit(self.store[item_index].img, (x + 8, y + 8))
-                            item_index += 1
-                        continue
+                            if i == 0:
+                                if self.game.player.weapon is None:
+                                    self.screen.blit(self.game.im.get_texture('weapon_shadow'), (x + 8, y + 8))
+                                else:
+                                    self.screen.blit(self.game.player.weapon.img, (x + 8, y + 8))
+                            elif i == 1:
+                                if self.game.player.armour is None:
+                                    self.screen.blit(self.game.im.get_texture('armour_shadow'), (x + 8, y + 8))
+                                else:
+                                    self.screen.blit(self.game.player.armour.img, (x + 8, y + 8))
+                            elif i == 2:
+                                if self.game.player.ring1 is None:
+                                    self.screen.blit(self.game.im.get_texture('ring_shadow'), (x + 8, y + 8))
+                                else:
+                                    self.screen.blit(self.game.player.ring1.img, (x + 8, y + 8))
+                            elif i == 3:
+                                if self.game.player.ring2 is None:
+                                    self.screen.blit(self.game.im.get_texture('ring_shadow'), (x + 8, y + 8))
+                                else:
+                                    self.screen.blit(self.game.player.ring1.img, (x + 8, y + 8))
+                            continue
+                    if type(self.choosed) != int:
+                        if self.choosed[0] == j and self.choosed[1] == i:
+                            pygame.draw.rect(
+                                self.screen,
+                                INVENTORY_CHOOSE_COLOR,
+                                (
+                                    x,
+                                    y,
+                                    INVENTORY_CELL,
+                                    INVENTORY_CELL
+                                )
+                            )
+                            if item_index < len(self.store):
+                                self.screen.blit(self.store[item_index].img, (x + 8, y + 8))
+                                item_index += 1
+                            continue
                 pygame.draw.rect(
                     self.screen,
                     INVENTORY_COLOR,
@@ -156,17 +193,68 @@ class Inventory:
                         INVENTORY_CELL
                     )
                 )
+                if j == 0:
+                    if i == 0:
+                        if self.game.player.weapon is None:
+                            self.screen.blit(self.game.im.get_texture('weapon_shadow'), (x + 8, y + 8))
+                        else:
+                            self.screen.blit(self.game.player.weapon.img, (x + 8, y + 8))
+                    elif i == 1:
+                        if self.game.player.armour is None:
+                            self.screen.blit(self.game.im.get_texture('armour_shadow'), (x + 8, y + 8))
+                        else:
+                            self.screen.blit(self.game.player.armour.img, (x + 8, y + 8))
+                    elif i == 2:
+                        if self.game.player.ring1 is None:
+                            self.screen.blit(self.game.im.get_texture('ring_shadow'), (x + 8, y + 8))
+                        else:
+                            self.screen.blit(self.game.player.ring1.img, (x + 8, y + 8))
+                    elif i == 3:
+                        if self.game.player.ring2 is None:
+                            self.screen.blit(self.game.im.get_texture('ring_shadow'), (x + 8, y + 8))
+                        else:
+                            self.screen.blit(self.game.player.ring1.img, (x + 8, y + 8))
+                    continue
                 if item_index < len(self.store):
                     self.screen.blit(self.store[item_index].img, (x + 8, y + 8))
                     item_index += 1
 
     def click(self, i, j):
-        if i * INVENTORY_COLS + j >= len(self.store):
+        if i * INVENTORY_COLS + j - 4 >= len(self.store):
+            return
+        if i == 0 and ((self.choosed == WEAPON and j == 0) or
+                       (self.choosed == ARMOUR and j == 1) or
+                       (self.choosed == RING1 and j == 2) or
+                       (self.choosed == RING2 and j == 3)):
+            self.choosed = None
+            self.game.gui = None
             return
         if self.choosed is None or self.choosed != [i, j]:
-            self.choosed = [i, j]
-            item = self.store[i * INVENTORY_COLS + j]
-            self.game.gui = GUI(self.game).set_text(item.get_description()).set_choices(*item.get_choices())
+            if i == 0:
+                if j == 0:
+                    self.choosed = WEAPON
+                    item = self.game.player.weapon
+                    if item is not None:
+                        self.game.gui = GUI(self.game).set_text(item.get_description()).set_choices(*item.get_choices(self.game))
+                elif j == 1:
+                    self.choosed = ARMOUR
+                    item = self.game.player.armour
+                    if item is not None:
+                        self.game.gui = GUI(self.game).set_text(item.get_description()).set_choices(*item.get_choices(self.game))
+                elif j == 2:
+                    self.choosed = RING1
+                    item = self.game.player.ring1
+                    if item is not None:
+                        self.game.gui = GUI(self.game).set_text(item.get_description()).set_choices(*item.get_choices(self.game))
+                elif j == 3:
+                    self.choosed = RING2
+                    item = self.game.player.ring2
+                    if item is not None:
+                        self.game.gui = GUI(self.game).set_text(item.get_description()).set_choices(*item.get_choices(self.game))
+            else:
+                self.choosed = [i, j]
+                item = self.store[i * INVENTORY_COLS + j - 4]
+                self.game.gui = GUI(self.game).set_text(item.get_description()).set_choices(*item.get_choices(self.game))
         else:
             self.choosed = None
             self.game.gui = None
@@ -174,13 +262,16 @@ class Inventory:
     def remove_item(self):
         if self.choosed is None:
             return
-        return self.store.pop(self.choosed[0] * INVENTORY_COLS + self.choosed[1])
+        return self.store.pop(self.choosed[0] * INVENTORY_COLS + self.choosed[1] - 4)
+
+    def get_item(self):
+        return self.store[self.choosed[0] * INVENTORY_COLS + self.choosed[1] - 4]
 
     def throw_item(self):
         if self.choosed is None:
             return
         player = self.game.player
-        if self.game.im.summon_event(self.store[self.choosed[0] * INVENTORY_COLS + self.choosed[1]].__class__.__name__,
+        if self.game.im.summon_event(self.store[self.choosed[0] * INVENTORY_COLS + self.choosed[1] - 4].__class__.__name__,
                                      THROW_ITEM_EVENT, self.game):
             item = self.remove_item()
             self.game.level.spawn_item(item.__class__.__name__, player.cell_x, player.cell_y)

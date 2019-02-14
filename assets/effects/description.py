@@ -1,5 +1,4 @@
 from basics import BasicEffect
-from Constants import UNHUNGRY_STEPS
 
 
 class hungry(BasicEffect):
@@ -10,4 +9,3 @@ class hungry(BasicEffect):
 
     def affect(self, game):
         game.player.health -= 1
-        game.player.unhungry_steps = UNHUNGRY_STEPS
