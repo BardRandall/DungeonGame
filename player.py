@@ -85,7 +85,7 @@ class Player:
             return
         self.health -= (1 - self.armour.get_defence()) * k
 
-    def get_damage(self, k):
+    def get_damage(self):
         if self.weapon is None:
             return 1
         return self.weapon.get_damage()

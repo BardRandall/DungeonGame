@@ -42,7 +42,7 @@ class GUI:
                 text.append(txt)
                 text_height += txt.get_rect().height
             else:
-                txt = self.font.render(self.text[i:i+max_length], True, INVENTORY_FONT_COLOR)
+                txt = self.font.render(self.text[i:i + max_length], True, INVENTORY_FONT_COLOR)
                 text.append(txt)
                 text_height += txt.get_rect().height
         height += text_height
@@ -67,11 +67,11 @@ class GUI:
         for i in range(len(self.choices)):
             if filling:
                 self.buttons.append((
-                GUI_X + GUI_BORDER + i * GUI_BUTTON_INDENT + last_symbols + i * GUI_BUTTON_INDENT,
-                GUI_Y + text_height + GUI_BUTTON_SPACE + symbol_rect.height,
-                2 * GUI_BUTTON_BORDER_WIDTH + self.choices[i].get_rect().width,
-                2 * GUI_BUTTON_BORDER_HEIGHT + self.choices[i].get_rect().height
-            ))
+                    GUI_X + GUI_BORDER + i * GUI_BUTTON_INDENT + last_symbols + i * GUI_BUTTON_INDENT,
+                    GUI_Y + text_height + GUI_BUTTON_SPACE + symbol_rect.height,
+                    2 * GUI_BUTTON_BORDER_WIDTH + self.choices[i].get_rect().width,
+                    2 * GUI_BUTTON_BORDER_HEIGHT + self.choices[i].get_rect().height
+                ))
             pygame.draw.rect(self.game.screen, GUI_BUTTON_COLOR, (
                 GUI_X + GUI_BORDER + i * GUI_BUTTON_INDENT + last_symbols + i * GUI_BUTTON_INDENT,
                 GUI_Y + text_height + GUI_BUTTON_SPACE + symbol_rect.height,
@@ -109,21 +109,21 @@ class Inventory:
 
     def render(self):
         pygame.draw.rect(
-                             self.screen,
-                             INVENTORY_BORDER_COLOR,
-                             (INVENTORY_X,
-                              INVENTORY_Y,
-                              INVENTORY_WIDTH,
-                              INVENTORY_HEIGHT)
+            self.screen,
+            INVENTORY_BORDER_COLOR,
+            (INVENTORY_X,
+             INVENTORY_Y,
+             INVENTORY_WIDTH,
+             INVENTORY_HEIGHT)
         )
         font = pygame.font.Font(None, 25)
         text = font.render(INVENTORY_TITLE, True, INVENTORY_FONT_COLOR)
         text_width = 2 * INVENTORY_LOW_SPACE + INVENTORY_CELL * INVENTORY_COLS + (INVENTORY_COLS - 1) * INVENTORY_SPACES
         text_rect = text.get_rect()
         self.screen.blit(text, (
-                                (text_width - text_rect.width) // 2 + INVENTORY_X,
-                                (INVENTORY_MAX_SPACE - text_rect.height) // 2 + INVENTORY_Y
-                                )
+            (text_width - text_rect.width) // 2 + INVENTORY_X,
+            (INVENTORY_MAX_SPACE - text_rect.height) // 2 + INVENTORY_Y
+        )
                          )
         item_index = 0
         for j in range(INVENTORY_ROWS):
@@ -133,9 +133,9 @@ class Inventory:
                 if self.choosed is not None:
                     if type(self.choosed) == int and j == 0:
                         if (self.choosed == WEAPON and i == 0) or \
-                           (self.choosed == ARMOUR and i == 1) or \
-                           (self.choosed == RING1 and i == 2) or \
-                           (self.choosed == RING2 and i == 3):
+                                (self.choosed == ARMOUR and i == 1) or \
+                                (self.choosed == RING1 and i == 2) or \
+                                (self.choosed == RING2 and i == 3):
                             pygame.draw.rect(
                                 self.screen,
                                 INVENTORY_CHOOSE_COLOR,
@@ -235,26 +235,31 @@ class Inventory:
                     self.choosed = WEAPON
                     item = self.game.player.weapon
                     if item is not None:
-                        self.game.gui = GUI(self.game).set_text(item.get_description()).set_choices(*item.get_choices(self.game))
+                        self.game.gui = GUI(self.game).set_text(item.get_description()).set_choices(
+                            *item.get_choices(self.game))
                 elif j == 1:
                     self.choosed = ARMOUR
                     item = self.game.player.armour
                     if item is not None:
-                        self.game.gui = GUI(self.game).set_text(item.get_description()).set_choices(*item.get_choices(self.game))
+                        self.game.gui = GUI(self.game).set_text(item.get_description()).set_choices(
+                            *item.get_choices(self.game))
                 elif j == 2:
                     self.choosed = RING1
                     item = self.game.player.ring1
                     if item is not None:
-                        self.game.gui = GUI(self.game).set_text(item.get_description()).set_choices(*item.get_choices(self.game))
+                        self.game.gui = GUI(self.game).set_text(item.get_description()).set_choices(
+                            *item.get_choices(self.game))
                 elif j == 3:
                     self.choosed = RING2
                     item = self.game.player.ring2
                     if item is not None:
-                        self.game.gui = GUI(self.game).set_text(item.get_description()).set_choices(*item.get_choices(self.game))
+                        self.game.gui = GUI(self.game).set_text(item.get_description()).set_choices(
+                            *item.get_choices(self.game))
             else:
                 self.choosed = [i, j]
                 item = self.store[i * INVENTORY_COLS + j - 4]
-                self.game.gui = GUI(self.game).set_text(item.get_description()).set_choices(*item.get_choices(self.game))
+                self.game.gui = GUI(self.game).set_text(item.get_description()).set_choices(
+                    *item.get_choices(self.game))
         else:
             self.choosed = None
             self.game.gui = None
@@ -271,7 +276,8 @@ class Inventory:
         if self.choosed is None:
             return
         player = self.game.player
-        if self.game.im.summon_event(self.store[self.choosed[0] * INVENTORY_COLS + self.choosed[1] - 4].__class__.__name__,
-                                     THROW_ITEM_EVENT, self.game):
+        if self.game.im.summon_event(
+                self.store[self.choosed[0] * INVENTORY_COLS + self.choosed[1] - 4].__class__.__name__,
+                THROW_ITEM_EVENT, self.game):
             item = self.remove_item()
             self.game.level.spawn_item(item.__class__.__name__, player.cell_x, player.cell_y)

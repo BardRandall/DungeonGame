@@ -1,4 +1,4 @@
-from basics import BasicItem, FoodItem, WeaponItem, ArmourItem, RingItem
+from basics import BasicItem, FoodItem, WeaponItem, ArmourItem
 
 
 def do_nothing(*args):
@@ -82,7 +82,6 @@ class sworld(WeaponItem):
 
     def get_damage(self):
         return 2
-
 
 
 class fabric_armour(ArmourItem):

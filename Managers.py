@@ -10,7 +10,6 @@ class BlockManager:
 
     def __init__(self):
         self.blocks_store = {}
-        print(dir(blocks))
         for block in dir(blocks)[9:]:
             self.blocks_store[block] = eval('blocks.{}()'.format(block))
 

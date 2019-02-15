@@ -19,7 +19,7 @@ class Game:
         self.level = Level('ark.json', self.screen, self)
         self.gui = None
         pygame.mixer.music.load('assets/music/theme.mp3')
-        #pygame.mixer.music.play(-1)
+        pygame.mixer.music.play(-1)
 
     def update(self):
         self.level.update()

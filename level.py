@@ -10,7 +10,6 @@ class Cell:
         self.block = block
         self.items = []
 
-
     def add_item(self, item):
         self.items.append(item)
 
