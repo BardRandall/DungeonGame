@@ -70,6 +70,21 @@ class sword(WeaponItem):
         return 2
 
 
+class sworld(WeaponItem):
+
+    def __init__(self):
+        super().__init__()
+        self.load_image(2, 0)
+        self.name = 'sworld'
+
+    def get_description(self):
+        return 'Меч: наносит от 2 до 4 единиц урона'
+
+    def get_damage(self):
+        return 2
+
+
+
 class fabric_armour(ArmourItem):
 
     def __init__(self):
@@ -84,7 +99,7 @@ class fabric_armour(ArmourItem):
         return 0.3
 
 
-class packed_lunch(FoodItem):
+class bread(FoodItem):
 
     def __init__(self):
         super().__init__()
@@ -92,3 +107,25 @@ class packed_lunch(FoodItem):
 
     def get_description(self):
         return 'Сухой паек: дешево и сердито'
+
+
+class magic_wend(WeaponItem):
+
+    def __init__(self):
+        super().__init__()
+        self.load_image(3, 0)
+        self.name = 'magic wade'
+
+    def get_description(self):
+        return 'волшебная Палочка: наносит от 1 до 5 единиц урона'
+
+
+class standart_chest(BasicItem):
+
+    def __init__(self):
+        super().__init__()
+        self.load_image(3, 1)
+        self.name = 'chest'
+
+    def get_description(self):
+        return 'Здесь спрятаны разные побрякушки'

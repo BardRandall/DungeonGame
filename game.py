@@ -16,7 +16,7 @@ class Game:
         self.player = Player(self)
         self.mobs = []
         self.eh = EventHandler(self)
-        self.level = Level('level1.json', self.screen, self)
+        self.level = Level('ark.json', self.screen, self)
         self.gui = None
         pygame.mixer.music.load('assets/music/theme.mp3')
         #pygame.mixer.music.play(-1)

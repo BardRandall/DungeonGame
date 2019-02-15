@@ -10,6 +10,7 @@ class BlockManager:
 
     def __init__(self):
         self.blocks_store = {}
+        print(dir(blocks))
         for block in dir(blocks)[9:]:
             self.blocks_store[block] = eval('blocks.{}()'.format(block))
 
@@ -30,7 +31,7 @@ class ItemManager:
 
     def __init__(self):
         self.items_store = {}
-        for item in dir(items)[13:]:
+        for item in dir(items)[14:]:
             self.items_store[item] = eval('items.{}()'.format(item))
         for item in dir(mod)[10:]:
             self.items_store[item] = eval('mod.{}()'.format(item))

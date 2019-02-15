@@ -1,7 +1,7 @@
 from pygame import K_i, K_UP, K_RIGHT, K_DOWN, K_LEFT
 
 WIDTH = 800
-HEIGHT = 600
+HEIGHT = 900
 CELL_SIZE = 16
 FPS = 45
 
