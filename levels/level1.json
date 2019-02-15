@@ -45,7 +45,11 @@
         }]
       },
       {
-        "block": "stone_floor"
+        "block": "stone_floor",
+        "items": [{
+            "item": "rose",
+            "data": {}
+          }]
       },
       {
         "block": "brick_wall"
@@ -56,7 +60,11 @@
         "block": "door"
       },
       {
-        "block": "stone_floor"
+        "block": "stone_floor",
+        "items": [{
+          "item": "ghost",
+          "data": {}
+        }]
       },
       {
         "block": "upstairs"

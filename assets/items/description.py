@@ -1,4 +1,4 @@
-from basics import BasicItem, FoodItem, WeaponItem
+from basics import BasicItem, FoodItem, WeaponItem, ArmourItem, RingItem
 
 
 def do_nothing(*args):
@@ -65,6 +65,23 @@ class sword(WeaponItem):
 
     def get_description(self):
         return 'Меч: наносит от 2 до 4 единиц урона'
+
+    def get_damage(self):
+        return 2
+
+
+class fabric_armour(ArmourItem):
+
+    def __init__(self):
+        super().__init__()
+        self.load_image(0, 3)
+        self.name = 'fabric_armour'
+
+    def get_description(self):
+        return 'Тканевый доспех. Обеспечивает простейшую защиту. Снижает урон на 30%'
+
+    def get_defence(self):
+        return 0.3
 
 
 class packed_lunch(FoodItem):

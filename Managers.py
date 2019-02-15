@@ -1,7 +1,9 @@
 import assets.blocks.descrition as blocks
 import assets.items.description as items
 import assets.effects.description as effects
+import assets.mobs.description as mobs
 from basics import *
+import mods.TestMod.items as mod
 
 
 class BlockManager:
@@ -28,8 +30,10 @@ class ItemManager:
 
     def __init__(self):
         self.items_store = {}
-        for item in dir(items)[11:]:
+        for item in dir(items)[13:]:
             self.items_store[item] = eval('items.{}()'.format(item))
+        for item in dir(mod)[10:]:
+            self.items_store[item] = eval('mod.{}()'.format(item))
 
     def get_texture(self, name):
         return self.items_store[name].img
@@ -40,6 +44,14 @@ class ItemManager:
             return obj.take_item_event(game)
         elif event == THROW_ITEM_EVENT:
             return obj.throw_item_event(game)
+
+
+class MobManager:
+
+    def __init__(self):
+        self.mobs_store = {}
+        for mob in dir(mobs)[9:]:
+            self.mobs_store[mob] = eval('mobs.{}'.format(mob))
 
 
 class EffectManager:

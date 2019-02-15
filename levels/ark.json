@@ -1,0 +1,1495 @@
+{
+    "next level": 2,
+    "start_pos": {
+        "x": 1,
+        "y": 1
+    },
+    "width": 17,
+    "height": 29,
+    "board": [
+        [
+            {
+                "block": "brick_floor",
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": "brick_floor",
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": "brick_floor",
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            }
+        ],
+        [
+            {
+                "block": "brick_floor",
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": "brick_floor",
+                "items": [
+                    {
+                        "item": "bones",
+                        "data": {}
+                    }
+                ],
+                "mobs": []
+            },
+            {
+                "block": "brick_floor",
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            }
+        ],
+        [
+            {
+                "block": "brick_floor",
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": "brick_floor",
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": "brick_floor",
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            }
+        ],
+        [
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            }
+        ],
+        [
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            }
+        ],
+        [
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            }
+        ],
+        [
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            }
+        ],
+        [
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            }
+        ],
+        [
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            }
+        ],
+        [
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            }
+        ],
+        [
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            }
+        ],
+        [
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            }
+        ],
+        [
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            }
+        ],
+        [
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            }
+        ],
+        [
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            }
+        ],
+        [
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            }
+        ],
+        [
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            },
+            {
+                "block": null,
+                "items": [],
+                "mobs": []
+            }
+        ]
+    ]
+}

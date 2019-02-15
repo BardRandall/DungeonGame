@@ -10,6 +10,7 @@ class Cell:
         self.block = block
         self.items = []
 
+
     def add_item(self, item):
         self.items.append(item)
 
@@ -28,6 +29,8 @@ class Level:
         with open(LEVELS_DIR + filename) as f:
             self.data = json.load(f)
         self.screen = screen
+        self.start_x = WIDTH // 2 - self.data['width'] * CELL_SIZE // 2
+        self.start_y = HEIGHT // 2 - self.data['height'] * CELL_SIZE // 2
         field = self.data['board']
         self.board = []
         for i in range(len(field)):
@@ -37,11 +40,12 @@ class Level:
                 if 'items' in field[i][j]:
                     cell.set_items(field[i][j]['items'])
                 if 'mobs' in field[i][j]:
-                    game.mobs = field[i][j]['mobs'][:]
+                    for mob in field[i][j]['mobs']:
+                        mob = eval('self.game.mm.mobs_store["{0}"](self.game, {1})'.format(mob['mob'], mob['data']))
+                        mob.teleport_to_cell(i, j, self.start_x, self.start_y)
+                        game.mobs.append(mob)
                 temp.append(cell)
             self.board.append(temp[:])
-        self.start_x = WIDTH // 2 - self.data['width'] * CELL_SIZE // 2
-        self.start_y = HEIGHT // 2 - self.data['height'] * CELL_SIZE // 2
         player_x, player_y = self.data['start_pos']['x'], self.data['start_pos']['y']
         game.player.teleport_to_cell(player_x, player_y, self.start_x, self.start_y)
 
@@ -56,6 +60,8 @@ class Level:
         for i in range(len(self.board)):
             for j in range(len(self.board[i])):
                 cell = self.board[i][j]
+                if cell.block is None:
+                    continue
                 if self.is_open_door and i == player.cell_x and j == player.cell_y:
                     texture = self.bm.get_texture('open_door')
                 else:

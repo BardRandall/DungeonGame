@@ -22,8 +22,8 @@ class Player:
 
         self.wearing = 1
 
-        self.weapon = None
-        self.armour = None
+        self.weapon = self.game.im.items_store['sword']
+        self.armour = self.game.im.items_store['fabric_armour']
         self.ring1 = None
         self.ring2 = None
 
@@ -84,6 +84,11 @@ class Player:
             self.health -= k
             return
         self.health -= (1 - self.armour.get_defence()) * k
+
+    def get_damage(self, k):
+        if self.weapon is None:
+            return 1
+        return self.weapon.get_damage()
 
     def _update_cell(self):
         cell = self.game.level.board[self.cell_x][self.cell_y]
@@ -150,7 +155,7 @@ class Player:
             HUNGRYBAR_HEIGHT
         ))
 
-    def step(self, direction):
+    def step(self, direction=None):
         if self.moving is not None:
             return
         if direction == LEFT:
